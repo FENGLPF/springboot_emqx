@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.lpf.dao.SystemLogDao">
+    <resultMap id="SystemLogMap" type="com.lpf.model.SystemLog">
+        <result property="logId" column="log_id"/>
+        <result property="logName" column="log_name"/>
+        <result property="content" column="content"/>
+        <result property="actionMethod" column="action_method"/>
+        <result property="actionResult" column="action_result"/>
+        <result property="logIp" column="log_ip"/>
+        <result property="addTime" column="add_time"/>
+    </resultMap>
+    
+    <insert id="insertSystemLog" parameterType="com.lpf.model.SystemLog">
+        insert into system_log
+        (log_id,log_name,content,action_method,action_result,log_ip,add_time)
+        values
+        (#{logId},#{logName},#{content},#{actionMethod},#{actionResult},#{logIp},#{addTime})
+    </insert>
+</mapper>
