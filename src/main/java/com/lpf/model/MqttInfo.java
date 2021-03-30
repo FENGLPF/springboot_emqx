@@ -6,21 +6,13 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class SystemLog {
+public class MqttInfo {
 
-    private Long logId;
+    private String prefix;
 
-    private Long comId;
-
-    private String logName;
+    private String sn;
 
     private String content;
-
-    private String actionMethod;
-
-    private String actionResult;
-
-    private String logIp;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date addTime;

@@ -6,21 +6,17 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class SystemLog {
+public class User {
 
-    private Long logId;
+    private Long userId;
 
-    private Long comId;
+    private String userName;
 
-    private String logName;
+    private String userPassword;
 
-    private String content;
+    private Integer userSex;
 
-    private String actionMethod;
-
-    private String actionResult;
-
-    private String logIp;
+    private String openId;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date addTime;

@@ -1,7 +1,9 @@
 package com.lpf.mqtt;
 
+import com.lpf.model.MqttInfo;
 import com.lpf.model.MqttMessage;
 import com.lpf.service.MqttService;
+import com.lpf.util.JsonUtil;
 import com.lpf.util.SnowflakeIdWorker;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.slf4j.Logger;
@@ -138,8 +140,15 @@ public class MqttConfiguration {
     public void dealWithMqttMessage(MqttMessage mqttMessage) {
 
         try {
-
-        } catch (NumberFormatException e) {
+            MqttInfo mqttInfo = JsonUtil.objectFromJsonStr(mqttMessage.getMessage(), MqttInfo.class);
+            switch (mqttInfo.getPrefix()) {
+                case "123":
+                    int i=0;
+                    break;
+                default:
+                    break;
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
